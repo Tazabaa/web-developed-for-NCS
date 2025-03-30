@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCS OFFICIAL WEB - Mpumalanga Hip-Hop Hustler</title>
+    <style>
+        /* Modern styling with hustler aesthetic */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+        
+        body {
+            color: white;
+            background-color: #121212;
+            line-height: 1.6;
+        }
+        
+        header {
+            padding: 2rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.85);
+            border-bottom: 2px solid #ff5500;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #ff5500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #ddd;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        nav a:hover {
+            color: #ff5500;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            padding: 8rem 2rem;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('images.png') center/cover no-repeat;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .hustle-badge {
+            display: inline-block;
+            background-color: #ff5500;
+            color: black;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff5500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #ff5500;
+        }
+        
+        .bio {
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 3rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #ff5500;
+        }
+        
+        .bio p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info strong {
+            color: #ff5500;
+        }
+        
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .track {
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .track:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 85, 0, 0.2);
+            border-color: #ff5500;
+        }
+        
+        .track h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .track .year {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .track-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn, .youtube-btn, .audiomack-btn {
+            display: inline-block;
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .download-btn {
+            background-color: #ff5500;
+            color: black;
+        }
+        
+        .youtube-btn {
+            background-color: #ff0000;
+            color: white;
+        }
+        
+        .audiomack-btn {
+            background-color: #ff9500;
+            color: black;
+        }
+        
+        .download-btn:hover {
+            background-color: #ff7700;
+            transform: scale(1.05);
+        }
+        
+        .youtube-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .audiomack-btn:hover {
+            background-color: #ffb700;
+            transform: scale(1.05);
+        }
+        
+        .official-platforms {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .platform-badge {
+            display: inline-block;
+            background-color: rgba(255, 85, 0, 0.2);
+            color: #ff5500;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            margin: 0.5rem;
+            font-weight: 700;
+            border: 1px solid #ff5500;
+            transition: all 0.3s;
+        }
+        
+        .platform-badge:hover {
+            background-color: rgba(255, 85, 0, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        .music-player {
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            border-left: 4px solid #ff5500;
+        }
+        
+        .player-controls {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .player-btn {
+            background-color: #ff5500;
+            color: black;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .progress-bar {
+            flex-grow: 1;
+            height: 6px;
+            background-color: #333;
+            border-radius: 3px;
+            margin: 0 1rem;
+            position: relative;
+        }
+        
+        .progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 30%;
+            background-color: #ff5500;
+            border-radius: 3px;
+        }
+        
+        .time {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background-color: rgba(0, 0, 0, 0.95);
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+        }
+        
+        .social-links {
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #ff5500;
+        }
+        
+        .credits {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+            }
+            
+            nav a {
+                margin: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .music-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .track-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .download-btn, .youtube-btn, .audiomack-btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.7rem;
+                min-width: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">NCS OFFICIAL WEB</div>
+        <div class="tagline">ENJOY HUSTLE MUSIC</div>
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#bio">Bio</a>
+        <a href="#music">Music</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>NCS LIFE STYLE</h1>
+            <p>The authentic voice of Mafambisa streets</p>
+            <div class="hustle-badge">Hustle Music Since 2002</div>
+        </div>
+    </section>
+    
+    <section class="container" id="bio">
+        <h2>Street Biography</h2>
+        <div class="bio">
+            <p>Born and raised in the tough neighborhoods of Mafambisa, Mpumalanga, NCS began his musical journey in 2002, using hip-hop as his weapon against the struggles of street life. His raw, unfiltered lyrics paint vivid pictures of the hustler's life, earning him respect both in his community and beyond.</p>
+            <p>NCS's music is more than entertainment - it's survival, it's rebellion, it's truth. From underground cyphers to commanding stages across South Africa, his hustle has never stopped. Two decades in the game have only sharpened his skills and message.</p>
+            <p>Representing the real street narrative, NCS continues to drop tracks that resonate with anyone who's ever had to hustle for their dreams. This is not just music - this is a lifestyle.</p>
+        </div>
+    </section>
+    
+    <section class="container" id="music">
+        <h2>Street Anthems</h2>
+        <p>Stream and download the raw sounds of the hustle</p>
+        
+        <div class="music-grid">
+            <div class="track">
+                <h3>Esbhedlela ft. Sushii Main</h3>
+                <span class="year">2023 Collaboration</span>
+                <p>Fire collab with Sushii Main</p>
+                <div class="track-links">
+                    <a href="#" class="download-btn">Download</a>
+                    <a href="https://www.youtube.com/watch?v=Py6kQRFacIU" class="youtube-btn" target="_blank">YouTube</a>
+                </div>
+            </div>
+            
+            <div class="track">
+                <h3>Number 7</h3>
+                <span class="year">2023 Single</span>
+                <p>Lucky number vibes</p>
+                <div class="track-links">
+                    <a href="#" class="download-btn">Download</a>
+                    <a href="https://www.youtube.com/watch?v=9E__--zXqDQ" class="youtube-btn" target="_blank">YouTube</a>
+                </div>
+            </div>
+            
+            <div class="track">
+                <h3>Reserecting Rap (with Thash)</h3>
+                <span class="year">2022 Collaboration</span>
+                <p>Bringing real rap back</p>
+                <div class="track-links">
+                    <a href="#" class="download-btn">Download</a>
+                    <a href="https://www.youtube.com/watch?v=Lq2ZVyQf35o" class="youtube-btn" target="_blank">YouTube</a>
+                </div>
+            </div>
+            
+            <div class="track">
+                <h3>Mama (prod. by Dollar)</h3>
+                <span class="year">2022 Single</span>
+                <p>Tribute track with Dollar beats</p>
+                <div class="track-links">
+                    <a href="#" class="download-btn">Download</a>
+                    <a href="https://www.youtube.com/watch?v=bomn8IeujFM" class="youtube-btn" target="_blank">YouTube</a>
+                </div>
+            </div>
+            
+            <div class="track">
+                <h3>Time for Hero</h3>
+                <span class="year">2022 Single</span>
+                <p>Anthem for the everyday heroes</p>
+                <div class="track-links">
+                    <a href="#" class="download-btn">Download</a>
+                    <a href="https://www.youtube.com/watch?v=enh3yDh-9Gc" class="youtube-btn" target="_blank">YouTube</a>
+                    <a href="https://audiomack.com/ncs-mp/song/time-for-hero" class="audiomack-btn" target="_blank">Audiomack</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="official-platforms">
+            <h3>OFFICIAL MUSIC PLATFORMS</h3>
+            <a href="https://audiomack.com/ncs-mp" class="platform-badge" target="_blank">Audiomack Profile</a>
+            <a href="#" class="platform-badge">Spotify</a>
+            <a href="#" class="platform-badge">Apple Music</a>
+            <a href="#" class="platform-badge">Deezer</a>
+        </div>
+        
+        <div class="music-player">
+            <h3>LISTEN NOW: "Time for Hero" on Audiomack</h3>
+            <p>Stream the official track now</p>
+            <div class="player-controls">
+                <a href="https://audiomack.com/ncs-mp/song/time-for-hero" class="player-btn" target="_blank">▶</a>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span class="time">3:12 / 3:12</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container" id="gallery">
+        <h2>Street Scenes</h2>
+        <p>Moments from the grind (Gallery coming soon)</p>
+    </section>
+    
+    <section class="container" id="contact">
+        <h2>Connect</h2>
+        <div class="bio">
+            <p>For bookings, features, or just to show love:</p>
+            
+            <div class="contact-info">
+                <p><strong>NCS Contact:</strong> 079 218 9044</p>
+                <p><strong>Email:</strong> ncs.hustle@example.com</p>
+            </div>
+            
+            <div class="contact-info">
+                <p><strong>Web Developer:</strong> Brandon Lukhele</p>
+                <p><strong>Contact:</strong> 076 815 4014</p>
+                <p><strong>Email:</strong> jblukhele2002@gmail.com</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">📸</a>
+                <a href="#">🎵</a>
+                <a href="#">▶️</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> NCS LIFE STYLE. All Rights Reserved.</p>
+        <p>Mafambisa, Mpumalanga, South Africa | Since 2002</p>
+        <div class="copyright">© COPY RIGHT 2025</div>
+        <div class="credits">
+            Website crafted with hustle by Brandon from Mpumalanga at Phakani
+        </div>
+    </footer>
+</body>
+</html>
